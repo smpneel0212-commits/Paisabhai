@@ -1,0 +1,168 @@
+/* ==========================================================================
+   PAISABHAI - STYLESHEET
+   Clean, modern, high-contrast, mobile-friendly financial UI
+   ========================================================================== */
+
+/* View Panels Navigation */
+.view-panel {
+  display: none;
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.view-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nav Tabs */
+.nav-tab.active {
+  background-color: #ffffff;
+  color: #047857;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+}
+.nav-tab:not(.active) {
+  color: #475569;
+}
+.nav-tab:not(.active):hover {
+  color: #0f172a;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mob-nav-tab.active {
+  color: #059669;
+  font-weight: 700;
+}
+
+/* Payment Mode Radio Chips */
+.mode-chip input:checked + .chip-box {
+  border-color: #059669;
+  background-color: #ecfdf5;
+  color: #065f46;
+  box-shadow: 0 0 0 1px #059669;
+}
+.mode-chip input:not(:checked) + .chip-box:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* Table Enhancements */
+#ledger-table th {
+  user-select: none;
+  white-space: nowrap;
+}
+#ledger-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+#ledger-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Modal Animations */
+.modal-backdrop {
+  transition: opacity 0.2s ease;
+}
+.modal-backdrop.hidden {
+  display: none;
+}
+.modal-backdrop:not(.hidden) {
+  display: flex;
+}
+
+/* Toast Notifications */
+.toast {
+  animation: toastSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.toast.toast-out {
+  animation: toastSlideOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Badges & Tags */
+.status-pill-active {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+.status-pill-inactive {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Print Stylesheet for clean Ledger export */
+@media print {
+  header, 
+  nav, 
+  .mob-nav-tab, 
+  #view-entry, 
+  #view-master, 
+  .kpi-cards, 
+  .filter-bar, 
+  #toast-container,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #view-ledger {
+    display: block !important;
+  }
+
+  #ledger-table {
+    width: 100% !important;
+    font-size: 10pt !important;
+  }
+
+  #ledger-table th, #ledger-table td {
+    border: 1px solid #cccccc !important;
+    padding: 6px !important;
+  }
+}
