@@ -2206,6 +2206,7 @@
 
     populateLedgerFilterDropdowns() {
       const partFilter = document.getElementById('filter-particular');
+      const catFilter = document.getElementById('filter-category');
       const personFilter = document.getElementById('filter-person');
 
       if (partFilter) {
@@ -2215,6 +2216,15 @@
           partFilter.innerHTML += `<option value="${p.id}" ${p.id === cur ? 'selected' : ''}>${p.name}</option>`;
         });
       }
+
+      if (catFilter) {
+        const curCat = catFilter.value;
+        catFilter.innerHTML = '<option value="all">All Categories</option>';
+        store.state.master.categories.forEach(c => {
+          catFilter.innerHTML += `<option value="${c.id}" ${c.id === curCat ? 'selected' : ''}>${c.name}</option>`;
+        });
+      }
+
 
       if (personFilter) {
         const curPerson = personFilter.value;
@@ -2253,6 +2263,7 @@
       document.getElementById('ledger-search').value = '';
       document.getElementById('filter-date-preset').value = 'all';
       document.getElementById('filter-particular').value = 'all';
+      if (document.getElementById('filter-category')) document.getElementById('filter-category').value = 'all';
       document.getElementById('filter-person').value = 'all';
       document.getElementById('filter-mode').value = 'all';
       document.getElementById('custom-date-row').classList.add('hidden');
@@ -2273,6 +2284,7 @@
       const query = (document.getElementById('ledger-search').value || '').toLowerCase().trim();
       const datePreset = document.getElementById('filter-date-preset').value;
       const partFilter = document.getElementById('filter-particular').value;
+      const catFilter = document.getElementById('filter-category') ? document.getElementById('filter-category').value : 'all';
       const personFilter = document.getElementById('filter-person').value;
       const modeFilter = document.getElementById('filter-mode').value;
 
@@ -2313,6 +2325,9 @@
       const filtered = store.state.transactions.filter(tx => {
         // Particular Filter
         if (partFilter !== 'all' && tx.particularId !== partFilter) return false;
+
+        // Category Filter
+        if (catFilter !== 'all' && tx.categoryId !== catFilter) return false;
 
         // Person Filter
         if (personFilter !== 'all' && (tx.personName || '').toLowerCase() !== personFilter.toLowerCase()) return false;
