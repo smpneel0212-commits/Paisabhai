@@ -1,0 +1,19 @@
+{
+  "name": "paisabhai",
+  "version": "1.0.0",
+  "description": "Personalized Master-Driven Ledger Web App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ledger",
+    "excel",
+    "expense-manager",
+    "github-pages",
+    "master-tab"
+  ],
+  "author": "smpneel0212-commits",
+  "license": "MIT"
+}
