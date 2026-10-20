@@ -1211,6 +1211,38 @@
     return `${prefix}_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
   }
 
+  function compressImage(file, maxWidth = 1200, quality = 0.75) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          let width = img.width;
+          let height = img.height;
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          const dataUrl = canvas.toDataURL('image/jpeg', quality);
+          resolve({
+            name: file.name,
+            type: 'image/jpeg',
+            dataUrl: dataUrl
+          });
+        };
+        img.onerror = () => reject(new Error('Failed to load image'));
+        img.src = e.target.result;
+      };
+      reader.onerror = () => reject(new Error('Failed to read file'));
+      reader.readAsDataURL(file);
+    });
+  }
+
   function formatCurrency(amount) {
     const curr = store.state.settings.currency || '₹';
     const num = Number(amount) || 0;
@@ -1944,6 +1976,122 @@
       this.showToast(`Contact "${name}" registered & filled`, 'success');
     }
 
+
+    // --- Device Media Attachment Handlers ---
+    handleMediaSelect(event, context) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        this.showToast('Please select an image (JPG, PNG, WebP, etc.)', 'error');
+        event.target.value = '';
+        return;
+      }
+
+      this.showToast('Processing media from device...', 'info');
+
+      compressImage(file, 1200, 0.75)
+        .then(compressed => {
+          if (context === 'entry') {
+            this.currentEntryMedia = compressed;
+            this.updateMediaPreviewUI('entry');
+          } else if (context === 'edit') {
+            this.currentEditMedia = compressed;
+            this.updateMediaPreviewUI('edit');
+          }
+          this.showToast(`Attached: "${file.name}"`, 'success');
+        })
+        .catch(err => {
+          console.error('Media processing error:', err);
+          this.showToast('Could not process selected media', 'error');
+        })
+        .finally(() => {
+          event.target.value = '';
+        });
+    }
+
+    updateMediaPreviewUI(context) {
+      if (context === 'entry') {
+        const container = document.getElementById('tx-media-preview-container');
+        const img = document.getElementById('tx-media-preview-img');
+        const nameEl = document.getElementById('tx-media-preview-name');
+        if (container && img && nameEl) {
+          if (this.currentEntryMedia) {
+            img.src = this.currentEntryMedia.dataUrl;
+            nameEl.textContent = this.currentEntryMedia.name;
+            container.classList.remove('hidden');
+          } else {
+            img.src = '';
+            nameEl.textContent = '';
+            container.classList.add('hidden');
+          }
+        }
+      } else if (context === 'edit') {
+        const container = document.getElementById('edit-media-preview-container');
+        const img = document.getElementById('edit-media-preview-img');
+        const nameEl = document.getElementById('edit-media-preview-name');
+        if (container && img && nameEl) {
+          if (this.currentEditMedia) {
+            img.src = this.currentEditMedia.dataUrl;
+            nameEl.textContent = this.currentEditMedia.name;
+            container.classList.remove('hidden');
+          } else {
+            img.src = '';
+            nameEl.textContent = '';
+            container.classList.add('hidden');
+          }
+        }
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    removeMedia(context) {
+      if (context === 'entry') {
+        this.currentEntryMedia = null;
+        this.updateMediaPreviewUI('entry');
+      } else if (context === 'edit') {
+        this.currentEditMedia = null;
+        this.updateMediaPreviewUI('edit');
+      }
+      this.showToast('Attached media removed', 'info');
+    }
+
+    previewCurrentMedia(context) {
+      const media = context === 'entry' ? this.currentEntryMedia : this.currentEditMedia;
+      if (!media) return;
+      this.openMediaViewerModal(media.dataUrl, media.name, 'Preview from device');
+    }
+
+    viewTransactionMedia(txId) {
+      const tx = store.state.transactions.find(t => t.id === txId);
+      if (!tx || !tx.media) {
+        this.showToast('No media attached to this transaction', 'info');
+        return;
+      }
+      const part = store.state.master.particulars.find(p => p.id === tx.particularId);
+      const subtitle = `${tx.date} • ${part ? part.name : 'Ledger'} • ${formatCurrency(tx.amount)} • ${tx.personName || ''}`;
+      this.openMediaViewerModal(tx.media.dataUrl, tx.media.name || 'Receipt.jpg', subtitle);
+    }
+
+    openMediaViewerModal(dataUrl, name, subtitle = '') {
+      const modal = document.getElementById('modal-media-viewer');
+      const img = document.getElementById('media-viewer-img');
+      const title = document.getElementById('media-viewer-title');
+      const sub = document.getElementById('media-viewer-subtitle');
+      const dl = document.getElementById('media-viewer-download');
+
+      if (!modal || !img) return;
+
+      img.src = dataUrl;
+      title.textContent = name || 'Bill / Receipt';
+      sub.textContent = subtitle;
+      dl.href = dataUrl;
+      dl.download = name || 'attached_bill.jpg';
+
+      modal.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
     // --- Save Transaction Submit ---
     handleTransactionSubmit(e) {
       e.preventDefault();
@@ -1985,7 +2133,8 @@
         personName: personName || 'N/A',
         amount,
         paymentMode,
-        notes: notes || '-'
+        notes: notes || '-',
+        media: this.currentEntryMedia ? { ...this.currentEntryMedia } : null
       };
 
       store.state.transactions.unshift(newTx);
@@ -2010,6 +2159,8 @@
       document.getElementById('tx-category').innerHTML = '<option value="">-- Select Category --</option>';
       document.getElementById('tx-person').value = '';
       document.getElementById('tx-notes').value = '';
+      this.currentEntryMedia = null;
+      this.updateMediaPreviewUI('entry');
 
       const cashRadio = document.querySelector('input[name="payment_mode"][value="Cash"]');
       if (cashRadio) cashRadio.checked = true;
@@ -2040,7 +2191,7 @@
               <span class="text-slate-600">${cat ? cat.name : 'Unknown'}</span>
             </div>
             <div class="text-[11px] text-slate-400 mt-0.5 truncate">
-              <span>${tx.date}</span> | <span>${tx.personName}</span> | <span>${tx.paymentMode}</span>
+              <span>${tx.date}</span> | <span>${tx.personName}</span> | <span>${tx.paymentMode}</span>${tx.media ? '<span class="text-emerald-700 font-bold inline-flex items-center gap-0.5 ml-1"><i data-lucide="paperclip" class="w-3 h-3"></i> Bill</span>' : ''}
             </div>
           </div>
           <span class="font-mono font-bold text-slate-900 flex-shrink-0">${formatCurrency(tx.amount)}</span>
@@ -2265,7 +2416,17 @@
               ${tx.paymentMode}
             </span>
           </td>
-          <td class="py-3 px-4 text-slate-500 max-w-xs truncate" title="${tx.notes || ''}">${tx.notes || '—'}</td>
+          <td class="py-3 px-4 text-slate-600 max-w-xs">
+            <div class="flex items-center gap-2">
+              <span class="truncate" title="${tx.notes || ''}">${tx.notes || '—'}</span>
+              ${tx.media ? `
+                <button type="button" onclick="app.viewTransactionMedia('${tx.id}')" title="View attached bill/media" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-[10px] font-bold transition flex-shrink-0 cursor-pointer shadow-2xs">
+                  <i data-lucide="paperclip" class="w-3 h-3"></i>
+                  <span>Media</span>
+                </button>
+              ` : ''}
+            </div>
+          </td>
           <td class="py-3 px-4 text-center whitespace-nowrap">
             <div class="flex items-center justify-center gap-1">
               <button onclick="app.openEditTransactionModal('${tx.id}')" title="Edit Row" class="p-1.5 text-slate-400 hover:text-brand-600 rounded-lg hover:bg-slate-100 transition">
@@ -2350,6 +2511,8 @@
       document.getElementById('edit-tx-person').value = tx.personName || '';
       document.getElementById('edit-tx-mode').value = tx.paymentMode || 'Cash';
       document.getElementById('edit-tx-notes').value = tx.notes || '';
+      this.currentEditMedia = tx.media ? { ...tx.media } : null;
+      this.updateMediaPreviewUI('edit');
 
       // Populate edit particular dropdown
       const partSelect = document.getElementById('edit-tx-particular');
@@ -2400,6 +2563,7 @@
       tx.personName = document.getElementById('edit-tx-person').value.trim() || 'N/A';
       tx.paymentMode = document.getElementById('edit-tx-mode').value;
       tx.notes = document.getElementById('edit-tx-notes').value.trim();
+      tx.media = this.currentEditMedia ? { ...this.currentEditMedia } : null;
 
       store.saveState();
       this.closeModals();
@@ -2451,7 +2615,8 @@
             'Paid To': tx.personName || '',
             'Amount': tx.amount,
             'Mode': tx.paymentMode,
-            'Description': tx.notes || ''
+            'Description': tx.notes || '',
+            'Media_Attached': tx.media ? ('Yes - ' + tx.media.name) : 'No'
           };
         });
 
