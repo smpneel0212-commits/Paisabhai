@@ -11,55 +11,1122 @@
   // 1. DATA STORAGE & INITIAL STATE ENGINE
   // =========================================================================
 
-  const STORAGE_KEY = 'paisabhai_ledger_store_v1';
+  const STORAGE_KEY = 'paisabhai_ledger_store_v2';
 
   // Neutral, fully editable starter defaults
   const DEFAULT_INITIAL_STATE = {
+    schemaVersion: 2,
     settings: {
       currency: '₹',
       appName: 'Paisabhai'
     },
     master: {
       particulars: [
-        { id: 'part_main', name: 'Main Account / Operations', status: 'active', order: 1 },
-        { id: 'part_personal', name: 'Personal & Household', status: 'active', order: 2 },
-        { id: 'part_contingency', name: 'Emergency / Contingency', status: 'active', order: 3 }
-      ],
+        {
+                "id": "part_1",
+                "name": "AGRICULTURE",
+                "status": "active",
+                "order": 1
+        },
+        {
+                "id": "part_2",
+                "name": "GOAT FARM",
+                "status": "active",
+                "order": 2
+        },
+        {
+                "id": "part_3",
+                "name": "GTCO",
+                "status": "active",
+                "order": 3
+        },
+        {
+                "id": "part_4",
+                "name": "JATRA",
+                "status": "active",
+                "order": 4
+        },
+        {
+                "id": "part_5",
+                "name": "LOAN & TAX",
+                "status": "active",
+                "order": 5
+        },
+        {
+                "id": "part_6",
+                "name": "P&CO",
+                "status": "active",
+                "order": 6
+        },
+        {
+                "id": "part_7",
+                "name": "PERSONAL",
+                "status": "active",
+                "order": 7
+        },
+        {
+                "id": "part_8",
+                "name": "SIDDU MALKHED",
+                "status": "active",
+                "order": 8
+        }
+],
       categories: [
-        { id: 'cat_supplies', name: 'Materials & Supplies', linkedParticularId: null },
-        { id: 'cat_transport', name: 'Fuel & Transportation', linkedParticularId: null },
-        { id: 'cat_labor', name: 'Labor & Services', linkedParticularId: null },
-        { id: 'cat_utilities', name: 'Utilities & Bills', linkedParticularId: null },
-        { id: 'cat_groceries', name: 'Groceries & Provisions', linkedParticularId: 'part_personal' },
-        { id: 'cat_misc', name: 'Miscellaneous', linkedParticularId: null }
-      ],
+        {
+                "id": "cat_1",
+                "name": "ADVANCE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_2",
+                "name": "AGRICULTURE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_3",
+                "name": "AKANKSHA",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_4",
+                "name": "BARDAN",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_5",
+                "name": "DANA & TEMPLE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_6",
+                "name": "DIESEL",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_7",
+                "name": "DOCTOR",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_8",
+                "name": "DUKAN KHARCH",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_9",
+                "name": "EDUCATION",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_10",
+                "name": "FEED",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_11",
+                "name": "FERTILIZER",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_12",
+                "name": "FOOD & ENT",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_13",
+                "name": "FUEL",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_14",
+                "name": "GIFT",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_15",
+                "name": "GLB HOME",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_16",
+                "name": "GUTGI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_17",
+                "name": "HAMALI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_18",
+                "name": "INTEREST",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_19",
+                "name": "JAMA",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_20",
+                "name": "KHAND & DANA",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_21",
+                "name": "KULI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_22",
+                "name": "LOAN",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_23",
+                "name": "MACHINE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_24",
+                "name": "MAINTAINANCE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_25",
+                "name": "MEDICINE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_26",
+                "name": "NEEL HOME",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_27",
+                "name": "PATTI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_28",
+                "name": "INSHURANCE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_29",
+                "name": "PHONE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_30",
+                "name": "PRODUCT PURCHACE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_31",
+                "name": "PURCHASE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_32",
+                "name": "RASHI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_33",
+                "name": "RENT",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_34",
+                "name": "SALARY",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_35",
+                "name": "SMP",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_36",
+                "name": "TAX",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_37",
+                "name": "TRANSPORT",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_38",
+                "name": "TRAVEL",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_39",
+                "name": "VACATION",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_40",
+                "name": "WORKERS",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_41",
+                "name": "KADTI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_42",
+                "name": "RETURN",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_43",
+                "name": "BC",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_44",
+                "name": "INVESTMENT",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_45",
+                "name": "MOOG PATTI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_46",
+                "name": "UDD PATTI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_47",
+                "name": "TUR PATTI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_48",
+                "name": "KADLI PATTI",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_49",
+                "name": "DAP",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_50",
+                "name": "VEHICLE",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_51",
+                "name": "PROPERTY",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_52",
+                "name": "JATRA",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_53",
+                "name": "OTHERS",
+                "linkedParticularId": null
+        },
+        {
+                "id": "cat_54",
+                "name": "ONLINE",
+                "linkedParticularId": null
+        }
+],
       people: [
-        { id: 'p_1', name: 'Suresh Kumar', roleTag: 'Driver / Logistics', phone: '9876543210' },
-        { id: 'p_2', name: 'Rajesh Hardware Store', roleTag: 'Supplier / Vendor', phone: '9812345678' }
-      ]
+        {
+                "id": "p_1",
+                "name": "AIYAPPA PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_2",
+                "name": "AKSHAY SHETTY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_3",
+                "name": "ANIL PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_4",
+                "name": "APPUSHETTY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_5",
+                "name": "ARJAPPA KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_6",
+                "name": "AZAM AUTOMOBILE",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_7",
+                "name": "BAI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_8",
+                "name": "BARDAN",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_9",
+                "name": "BASSAPPA LINGAMPALLI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_10",
+                "name": "BASWARAJ BHEEMRAO",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_11",
+                "name": "BASWARAJ CHITAPUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_12",
+                "name": "BASWARAJ DEVAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_13",
+                "name": "BASWARAJ DHOL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_14",
+                "name": "BASWARAJ KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_15",
+                "name": "RAJSHEKHER MANKAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_16",
+                "name": "BASWARAJ SHARNAIYA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_17",
+                "name": "BHEEMRAO KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_18",
+                "name": "BHEEMU (HUCH)",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_19",
+                "name": "BHEEMU CHITAPUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_20",
+                "name": "BHEEMU DEBBI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_21",
+                "name": "CHANA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_22",
+                "name": "CHANDAMMA BYADER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_23",
+                "name": "CHANNU POLICE PATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_24",
+                "name": "CMPATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_25",
+                "name": "DADA SAHEB MARTUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_26",
+                "name": "DANDAPPA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_27",
+                "name": "DEVAPPA & MALLAPPA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_28",
+                "name": "DEVAPPA K",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_29",
+                "name": "DIESEL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_30",
+                "name": "DUKAN KHARCH",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_31",
+                "name": "ERANNA PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_32",
+                "name": "GTCO",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_33",
+                "name": "GUNDAPPA GIRMAL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_34",
+                "name": "GURU SWAMY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_35",
+                "name": "HAMALI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_36",
+                "name": "HANMANTH CHITAPUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_37",
+                "name": "HANMANTH HUGAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_38",
+                "name": "HANMANTH PANCHAL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_39",
+                "name": "HANMANTH RAO",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_40",
+                "name": "HASHANNA PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_41",
+                "name": "HVT",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_42",
+                "name": "INTEREST",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_43",
+                "name": "GPAY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_44",
+                "name": "JAGADEVI POLICE PATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_45",
+                "name": "JAGAPPA CHITAPUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_46",
+                "name": "JAGAPPA MARENNA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_47",
+                "name": "JAGAPPA NAIKODI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_48",
+                "name": "JAGU HAMAL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_49",
+                "name": "JAGU SHETTY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_50",
+                "name": "JAGU TENT HOUSE",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_51",
+                "name": "JAGUSWAMY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_52",
+                "name": "JAMA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_53",
+                "name": "JHANGIR SAAB",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_54",
+                "name": "ONLINE",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_55",
+                "name": "KALAPPA MADIVAL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_56",
+                "name": "KARIYAPPA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_57",
+                "name": "KASHAPPA BYADER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_58",
+                "name": "KASHAPPA KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_59",
+                "name": "KHAND & DANA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_60",
+                "name": "KHARIDI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_61",
+                "name": "KHYALAPPA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_62",
+                "name": "LIGHT BILL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_63",
+                "name": "MAHADEVAPPA MASTER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_64",
+                "name": "MALLAPPA BUKANOR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_65",
+                "name": "MALLAPPA BYADER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_66",
+                "name": "MALLAPPA DEBBI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_67",
+                "name": "MARTHAND PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_68",
+                "name": "MAYBOOB SAAB ITGAMPALLI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_69",
+                "name": "MEHBOOB LINGAMPALLI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_70",
+                "name": "MEHBOOBSAAB",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_71",
+                "name": "MONAPPA KAMBAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_72",
+                "name": "MOUNESHWAR FERTILIZER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_73",
+                "name": "MUNIM",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_74",
+                "name": "NAGADI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_75",
+                "name": "NAGAMGOUDTI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_76",
+                "name": "NAGAPPA SALALLI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_77",
+                "name": "NAGU GIRMAL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_78",
+                "name": "OTHERS",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_79",
+                "name": "P&CO",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_80",
+                "name": "PEERAPPA KATTIMANI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_81",
+                "name": "PEERAPPA KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_82",
+                "name": "RACHAI MATPATI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_83",
+                "name": "RAJU MADIVAL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_84",
+                "name": "RAMALU HADPAD",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_85",
+                "name": "RAMESH MARUTI KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_86",
+                "name": "RKT",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_87",
+                "name": "RUDRAPPA KATTIMANI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_88",
+                "name": "SANGAPPA KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_89",
+                "name": "SANGAPPA MALAGI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_90",
+                "name": "SHAMRAO BAVA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_91",
+                "name": "SHANKAPPA MALAGI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_92",
+                "name": "SHANKREPPA JAMADAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_93",
+                "name": "SHANKREPPA PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_94",
+                "name": "SHANTAIYYA SWAMI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_95",
+                "name": "SHANTAMMA DEBBI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_96",
+                "name": "SHARNU POLICE PATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_97",
+                "name": "SHARNU POST",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_98",
+                "name": "SHEKAPPA JAMADAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_99",
+                "name": "SHIV MALAGI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_100",
+                "name": "SHIVANAND KESERADGI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_101",
+                "name": "SHIVKUMAR PATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_102",
+                "name": "SHIVLING KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_103",
+                "name": "SHIVRAJ PANCHAYAT",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_104",
+                "name": "SIDDAPPA BELKOTI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_105",
+                "name": "SIDDU GOWDA MARTUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_106",
+                "name": "SIDDU MALKHED",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_107",
+                "name": "SMPATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_108",
+                "name": "SRT",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_109",
+                "name": "SURYAKANTH",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_110",
+                "name": "SUTLI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_111",
+                "name": "TIPPANNA  M",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_112",
+                "name": "TIPPANNA DRIVER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_113",
+                "name": "TRANSPORT",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_114",
+                "name": "TUR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_115",
+                "name": "UDAY KUMAR",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_116",
+                "name": "V.B.PATIL",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_117",
+                "name": "VEERESH SHETTY",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_118",
+                "name": "VINOD POST",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_119",
+                "name": "VISHWANATH TIPPANNA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_120",
+                "name": "WARE HOUSE",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_121",
+                "name": "AIYYAPPA PUJARI BENAKNALLI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_122",
+                "name": "CHANDAPPA DRIVER",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_123",
+                "name": "PEERAPPA DEBBI KONK",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_124",
+                "name": "BASWARAJ GIRMAL (GUNT)",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_125",
+                "name": "INSURANCE",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_126",
+                "name": "DEEPAK RAMDASI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_127",
+                "name": "YALLAPPA PUJARI",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_128",
+                "name": "JAGADEVI POST",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_129",
+                "name": "MAHESH KURKUNTA",
+                "roleTag": null,
+                "phone": null
+        },
+        {
+                "id": "p_130",
+                "name": "MANJUNATH MADIVAL",
+                "roleTag": null,
+                "phone": null
+        }
+]
     },
-    transactions: [
-      {
-        id: 'tx_init_1',
-        date: getTodayDateString(),
-        particularId: 'part_main',
-        categoryId: 'cat_transport',
-        personName: 'Suresh Kumar',
-        amount: 1250,
-        paymentMode: 'UPI',
-        notes: 'Vehicle refueling & maintenance'
-      },
-      {
-        id: 'tx_init_2',
-        date: getTodayDateString(),
-        particularId: 'part_main',
-        categoryId: 'cat_supplies',
-        personName: 'Rajesh Hardware Store',
-        amount: 3400,
-        paymentMode: 'Bank Transfer',
-        notes: 'Toolkits and spare fittings'
-      }
-    ]
+    transactions: []
   };
 
   class Store {
@@ -67,15 +1134,34 @@
       this.state = this.loadState();
     }
 
-    loadState() {
+        loadState() {
       try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        // Check for v2 first, fallback to v1 to preserve user transactions
+        let raw = localStorage.getItem(STORAGE_KEY);
+        let oldV1 = null;
+        if (!raw) {
+          oldV1 = localStorage.getItem('paisabhai_ledger_store_v1');
+        }
+
         if (raw) {
           const parsed = JSON.parse(raw);
-          // Schema safety check
-          if (parsed && parsed.master && parsed.transactions) {
+          if (parsed && parsed.master && Array.isArray(parsed.transactions)) {
+            // Ensure schemaVersion 2 master is populated if empty
+            if (!parsed.schemaVersion || parsed.schemaVersion < 2) {
+              parsed.schemaVersion = 2;
+              parsed.master = JSON.parse(JSON.stringify(DEFAULT_INITIAL_STATE.master));
+            }
             return parsed;
           }
+        } else if (oldV1) {
+          // Upgrade from v1, keep transactions if any
+          const parsedV1 = JSON.parse(oldV1);
+          const newState = JSON.parse(JSON.stringify(DEFAULT_INITIAL_STATE));
+          if (parsedV1 && Array.isArray(parsedV1.transactions)) {
+            // Keep user transactions
+            newState.transactions = parsedV1.transactions;
+          }
+          return newState;
         }
       } catch (err) {
         console.error('Error loading localStorage:', err);
