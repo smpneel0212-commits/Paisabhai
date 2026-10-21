@@ -11,6 +11,15 @@
   // 1. DATA STORAGE & INITIAL STATE ENGINE
   // =========================================================================
 
+  // =========================================================================
+  // AUTHENTICATION CONFIGURATION
+  // =========================================================================
+  const AUTH_CONFIG = {
+    username: 'SHARNU PATIL',
+    password: '02161301',
+    storageKey: 'paisabhai_auth_session_v1'
+  };
+
   const STORAGE_KEY = 'paisabhai_ledger_store_v3';
 
   // Neutral, fully editable starter defaults
@@ -6997,9 +7006,104 @@
       this.sortField = 'date';
       this.sortOrder = 'desc'; // 'asc' or 'desc'
       this.pendingImport = null;
+      this.isAuthenticated = false;
     }
 
-    init() {
+
+    // =======================================================================
+    // 0. AUTHENTICATION & ACCESS CONTROL
+    // =======================================================================
+    checkAuth() {
+      const isAuth = localStorage.getItem(AUTH_CONFIG.storageKey) === 'true';
+      this.isAuthenticated = isAuth;
+      return isAuth;
+    }
+
+    showLoginView() {
+      const loginView = document.getElementById('view-login');
+      const appShell = document.getElementById('app-shell');
+      if (loginView) loginView.classList.remove('hidden');
+      if (appShell) appShell.classList.add('hidden');
+      const errorEl = document.getElementById('login-error');
+      if (errorEl) errorEl.classList.add('hidden');
+      const usernameEl = document.getElementById('login-username');
+      if (usernameEl) {
+        usernameEl.value = '';
+        setTimeout(() => usernameEl.focus(), 100);
+      }
+      const passEl = document.getElementById('login-password');
+      if (passEl) passEl.value = '';
+      if (window.lucide) lucide.createIcons();
+    }
+
+    showAppShell() {
+      const loginView = document.getElementById('view-login');
+      const appShell = document.getElementById('app-shell');
+      if (loginView) loginView.classList.add('hidden');
+      if (appShell) appShell.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    handleLogin(e) {
+      if (e) e.preventDefault();
+      const userEl = document.getElementById('login-username');
+      const passEl = document.getElementById('login-password');
+      const errEl = document.getElementById('login-error');
+      const errText = document.getElementById('login-error-text');
+
+      const user = userEl ? userEl.value.trim() : '';
+      const pass = passEl ? passEl.value.trim() : '';
+
+      // Normalize username: compare case-insensitively with AUTH_CONFIG.username
+      if (user.toUpperCase() === AUTH_CONFIG.username.toUpperCase() && pass === AUTH_CONFIG.password) {
+        localStorage.setItem(AUTH_CONFIG.storageKey, 'true');
+        this.isAuthenticated = true;
+        if (errEl) errEl.classList.add('hidden');
+        this.showAppShell();
+        this.showToast('Welcome, ' + AUTH_CONFIG.username + '! Ledger unlocked.', 'success');
+      } else {
+        if (errEl) {
+          errEl.classList.remove('hidden');
+          if (errText) errText.textContent = 'Invalid username or password. Please try again.';
+        }
+        if (passEl) {
+          passEl.value = '';
+          passEl.focus();
+        }
+        this.showToast('Authentication failed. Check username and password.', 'error');
+      }
+    }
+
+    logout() {
+      localStorage.removeItem(AUTH_CONFIG.storageKey);
+      sessionStorage.removeItem(AUTH_CONFIG.storageKey);
+      this.isAuthenticated = false;
+      this.showLoginView();
+      this.showToast('Ledger locked successfully.', 'info');
+    }
+
+    togglePasswordVisibility() {
+      const passEl = document.getElementById('login-password');
+      const eyeIcon = document.getElementById('eye-icon');
+      if (!passEl) return;
+      if (passEl.type === 'password') {
+        passEl.type = 'text';
+        if (eyeIcon) eyeIcon.setAttribute('data-lucide', 'eye-off');
+      } else {
+        passEl.type = 'password';
+        if (eyeIcon) eyeIcon.setAttribute('data-lucide', 'eye');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+        init() {
+      // Check authentication
+      if (!this.checkAuth()) {
+        this.showLoginView();
+      } else {
+        this.showAppShell();
+      }
+
       // Set today's date default
       const dateEl = document.getElementById('tx-date');
       if (dateEl) dateEl.value = getTodayDateString();

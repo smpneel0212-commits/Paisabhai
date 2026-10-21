@@ -51,6 +51,85 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
 
+  <!-- ========================================== -->
+  <!-- LOGIN & ACCESS LOCK SCREEN                 -->
+  <!-- ========================================== -->
+  <div id="view-login" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 overflow-y-auto">
+    <div class="max-w-md w-full bg-white rounded-3xl p-8 shadow-2xl border border-slate-100 space-y-6">
+      
+      <!-- Brand & Header -->
+      <div class="text-center space-y-2">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 font-bold text-2xl">
+          ₹
+        </div>
+        <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Paisabhai Ledger</h1>
+        <p class="text-xs text-slate-500 font-medium">Personalized Master-Driven Financial Ledger</p>
+      </div>
+
+      <!-- Auth Form -->
+      <form id="login-form" onsubmit="app.handleLogin(event)" class="space-y-4">
+        
+        <!-- Error Banner -->
+        <div id="login-error" class="hidden p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold flex items-center gap-2">
+          <i data-lucide="alert-circle" class="w-4 h-4 flex-shrink-0 text-rose-600"></i>
+          <span id="login-error-text">Invalid username or password.</span>
+        </div>
+
+        <!-- Username Field -->
+        <div>
+          <label for="login-username" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Username
+          </label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </div>
+            <input type="text" id="login-username" required placeholder="Enter username..." autocomplete="username"
+              class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm font-semibold bg-slate-50 text-slate-900">
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div>
+          <label for="login-password" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Password
+          </label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i data-lucide="key" class="w-4 h-4"></i>
+            </div>
+            <input type="password" id="login-password" required placeholder="Enter password..." autocomplete="current-password"
+              class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm font-semibold bg-slate-50 text-slate-900 font-mono">
+            <button type="button" onclick="app.togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600">
+              <i id="eye-icon" data-lucide="eye" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-700 hover:to-emerald-700 text-white font-bold text-sm shadow-lg shadow-brand-500/25 transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+          <i data-lucide="unlock" class="w-4 h-4"></i>
+          <span>Unlock Ledger</span>
+        </button>
+
+      </form>
+
+      <!-- Security Note -->
+      <div class="pt-2 border-t border-slate-100 text-center">
+        <p class="text-[11px] text-slate-400 flex items-center justify-center gap-1.5 font-medium">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>Authorized Access Only • Cross-Device Enabled</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- APP SHELL CONTAINER -->
+  <div id="app-shell" class="min-h-screen flex flex-col flex-1 hidden">
+
+
   <!-- TOP APP HEADER -->
   <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,6 +146,18 @@
               <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-100 text-brand-800 hidden sm:inline-block">Master Tab Ledger</span>
             </div>
             <p class="text-[11px] text-slate-500 font-medium hidden sm:block">Personalized • Zero-Hardcoded • Serverless</p>
+          </div>
+
+          <!-- User / Lock Action -->
+          <div class="flex items-center gap-1 pl-1 sm:pl-2 border-l border-slate-200">
+            <span class="hidden lg:flex items-center gap-1 text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+              <i data-lucide="user-check" class="w-3.5 h-3.5 text-brand-600"></i>
+              <span>SHARNU PATIL</span>
+            </span>
+            <button onclick="app.logout()" title="Lock Ledger / Switch User" class="flex items-center gap-1 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-semibold transition">
+              <i data-lucide="lock" class="w-3.5 h-3.5 text-rose-600"></i>
+              <span class="hidden sm:inline">Lock</span>
+            </button>
           </div>
         </div>
 
@@ -1011,6 +1102,8 @@
 
   <!-- FLOATING TOAST NOTIFICATION -->
   <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  </div><!-- /#app-shell -->
 
   <!-- APPLICATION JAVASCRIPT -->
   <script src="script.js"></script>

@@ -166,3 +166,15 @@
     padding: 6px !important;
   }
 }
+
+/* Authentication & Lock View */
+#view-login {
+  min-height: 100vh;
+  display: flex;
+}
+#view-login.hidden {
+  display: none !important;
+}
+#app-shell.hidden {
+  display: none !important;
+}
