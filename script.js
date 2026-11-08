@@ -6919,8 +6919,110 @@
     saveState() {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state));
+        this.syncWithGtcoLedger();
       } catch (err) {
         console.error('Error saving state to localStorage:', err);
+      }
+    }
+
+    syncWithGtcoLedger() {
+      try {
+        if (!this.state || !this.state.transactions) return;
+
+        // Find GTCO particular
+        const gtcoPart = (this.state.master.particulars || []).find(p => (p.name || '').trim().toUpperCase() === 'GTCO' || p.id === 'part_3');
+        const gtcoPartId = gtcoPart ? gtcoPart.id : 'part_3';
+
+        // Filter all GTCO transactions
+        const gtcoTxList = this.state.transactions.filter(t => t.particularId === gtcoPartId);
+        if (gtcoTxList.length === 0) return;
+
+        // Read or initialize GTCO_LEDGER_DATA_V2
+        let gtcoData = { farmers: [], advances: [], bills: [], customCommodities: [] };
+        const rawGtco = localStorage.getItem('GTCO_LEDGER_DATA_V2');
+        if (rawGtco) {
+          try {
+            gtcoData = JSON.parse(rawGtco);
+            if (!gtcoData.farmers) gtcoData.farmers = [];
+            if (!gtcoData.advances) gtcoData.advances = [];
+            if (!gtcoData.bills) gtcoData.bills = [];
+          } catch(e) {}
+        }
+
+        const catMap = {};
+        (this.state.master.categories || []).forEach(c => { catMap[c.id] = (c.name || '').toUpperCase(); });
+
+        let updated = false;
+
+        gtcoTxList.forEach(tx => {
+          const catName = catMap[tx.categoryId] || '';
+          const person = (tx.personName || '').trim();
+          if (!person || person === '-' || person === 'N/A') return;
+
+          // Check categories: ADVANCE, FERTILIZER, DAP, MEDICINE/PESTICIDE, SEEDS, or PATTI
+          const isAdvance = catName.includes('ADVANCE');
+          const isFertilizer = catName.includes('FERTILIZER') || catName.includes('DAP');
+          const isPesticide = catName.includes('MEDICINE') || catName.includes('PESTICIDE');
+          const isSeeds = catName.includes('SEED');
+
+          // Ensure farmer exists in GTCO-LEDGER
+          let farmer = gtcoData.farmers.find(f => (f.name || '').trim().toLowerCase() === person.toLowerCase());
+          if (!farmer) {
+            farmer = {
+              id: 'FARMER-PB-' + Math.abs(person.split('').reduce((acc, char) => (acc << 5) - acc + char.charCodeAt(0), 0)),
+              name: person,
+              phone: '',
+              village: 'NEELAHALLI',
+              notes: 'Imported from Paisabhai GTCO ledger',
+              createdAt: new Date().toISOString()
+            };
+            gtcoData.farmers.push(farmer);
+            updated = true;
+          }
+
+          if (isAdvance || isFertilizer || isPesticide || isSeeds) {
+            const purpose = (isFertilizer || isPesticide) ? 'Fertilizer & Pesticide'
+                          : isSeeds ? 'Seeds'
+                          : 'Cultivation';
+
+            const amt = Number(tx.amount) || 0;
+            const existingAdv = gtcoData.advances.find(a => a.paisabhaiTxId === tx.id || a.id === `ADV-PB-${tx.id}`);
+
+            if (!existingAdv) {
+              gtcoData.advances.push({
+                id: `ADV-PB-${tx.id}`,
+                advanceNumber: `ADV-PB-${(tx.id || '').replace('tx_hist_', '').replace('tx_', '')}`,
+                farmerId: farmer.id,
+                farmerName: farmer.name,
+                date: tx.date || new Date().toISOString().split('T')[0],
+                originalAmount: amt,
+                deductedAmount: 0,
+                unpaidBalance: amt,
+                purpose: purpose,
+                notes: `${catName} payment via ${tx.paymentMode || 'Cash'} [Synced from Paisabhai GTCO]`,
+                status: 'UNPAID',
+                deductionHistory: [],
+                paisabhaiTxId: tx.id
+              });
+              updated = true;
+            } else {
+              if (existingAdv.originalAmount !== amt || existingAdv.date !== tx.date) {
+                existingAdv.originalAmount = amt;
+                existingAdv.date = tx.date;
+                existingAdv.unpaidBalance = Math.max(0, amt - (existingAdv.deductedAmount || 0));
+                existingAdv.status = existingAdv.unpaidBalance === 0 ? 'PAID' : (existingAdv.deductedAmount > 0 ? 'PARTIALLY PAID' : 'UNPAID');
+                updated = true;
+              }
+            }
+          }
+        });
+
+        if (updated) {
+          localStorage.setItem('GTCO_LEDGER_DATA_V2', JSON.stringify(gtcoData));
+          window.dispatchEvent(new Event('gtco_ledger_updated'));
+        }
+      } catch (err) {
+        console.error('Error syncing Paisabhai to GTCO-LEDGER:', err);
       }
     }
 
@@ -6935,6 +7037,7 @@
   }
 
   const store = new Store();
+  store.syncWithGtcoLedger();
 
   // Helper date formatters
   function getTodayDateString() {
