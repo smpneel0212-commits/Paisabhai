@@ -20,1122 +20,4731 @@
     storageKey: 'paisabhai_auth_session_v1'
   };
 
-  const STORAGE_KEY = 'paisabhai_ledger_store_v3';
+  const STORAGE_KEY = 'paisabhai_ledger_store_v4';
 
   // Neutral, fully editable starter defaults
   const DEFAULT_INITIAL_STATE = {
-    schemaVersion: 3,
+    schemaVersion: 4,
     settings: {
       currency: '₹',
       appName: 'Paisabhai'
     },
     master: {
-      particulars: [
-        {
-                "id": "part_1",
-                "name": "AGRICULTURE",
-                "status": "active",
-                "order": 1
-        },
-        {
-                "id": "part_2",
-                "name": "GOAT FARM",
-                "status": "active",
-                "order": 2
-        },
-        {
-                "id": "part_3",
-                "name": "GTCO",
-                "status": "active",
-                "order": 3
-        },
-        {
-                "id": "part_4",
-                "name": "JATRA",
-                "status": "active",
-                "order": 4
-        },
-        {
-                "id": "part_5",
-                "name": "LOAN & TAX",
-                "status": "active",
-                "order": 5
-        },
-        {
-                "id": "part_6",
-                "name": "P&CO",
-                "status": "active",
-                "order": 6
-        },
-        {
-                "id": "part_7",
-                "name": "PERSONAL",
-                "status": "active",
-                "order": 7
-        },
-        {
-                "id": "part_8",
-                "name": "SIDDU MALKHED",
-                "status": "active",
-                "order": 8
-        }
-],
-      categories: [
-        {
-                "id": "cat_1",
-                "name": "ADVANCE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_2",
-                "name": "AGRICULTURE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_3",
-                "name": "AKANKSHA",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_4",
-                "name": "BARDAN",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_5",
-                "name": "DANA & TEMPLE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_6",
-                "name": "DIESEL",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_7",
-                "name": "DOCTOR",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_8",
-                "name": "DUKAN KHARCH",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_9",
-                "name": "EDUCATION",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_10",
-                "name": "FEED",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_11",
-                "name": "FERTILIZER",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_12",
-                "name": "FOOD & ENT",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_13",
-                "name": "FUEL",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_14",
-                "name": "GIFT",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_15",
-                "name": "GLB HOME",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_16",
-                "name": "GUTGI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_17",
-                "name": "HAMALI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_18",
-                "name": "INTEREST",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_19",
-                "name": "JAMA",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_20",
-                "name": "KHAND & DANA",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_21",
-                "name": "KULI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_22",
-                "name": "LOAN",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_23",
-                "name": "MACHINE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_24",
-                "name": "MAINTAINANCE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_25",
-                "name": "MEDICINE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_26",
-                "name": "NEEL HOME",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_27",
-                "name": "PATTI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_28",
-                "name": "INSHURANCE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_29",
-                "name": "PHONE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_30",
-                "name": "PRODUCT PURCHACE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_31",
-                "name": "PURCHASE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_32",
-                "name": "RASHI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_33",
-                "name": "RENT",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_34",
-                "name": "SALARY",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_35",
-                "name": "SMP",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_36",
-                "name": "TAX",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_37",
-                "name": "TRANSPORT",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_38",
-                "name": "TRAVEL",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_39",
-                "name": "VACATION",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_40",
-                "name": "WORKERS",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_41",
-                "name": "KADTI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_42",
-                "name": "RETURN",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_43",
-                "name": "BC",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_44",
-                "name": "INVESTMENT",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_45",
-                "name": "MOOG PATTI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_46",
-                "name": "UDD PATTI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_47",
-                "name": "TUR PATTI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_48",
-                "name": "KADLI PATTI",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_49",
-                "name": "DAP",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_50",
-                "name": "VEHICLE",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_51",
-                "name": "PROPERTY",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_52",
-                "name": "JATRA",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_53",
-                "name": "OTHERS",
-                "linkedParticularId": null
-        },
-        {
-                "id": "cat_54",
-                "name": "ONLINE",
-                "linkedParticularId": null
-        }
-],
-      people: [
-        {
-                "id": "p_1",
-                "name": "AIYAPPA PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_2",
-                "name": "AKSHAY SHETTY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_3",
-                "name": "ANIL PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_4",
-                "name": "APPUSHETTY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_5",
-                "name": "ARJAPPA KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_6",
-                "name": "AZAM AUTOMOBILE",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_7",
-                "name": "BAI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_8",
-                "name": "BARDAN",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_9",
-                "name": "BASSAPPA LINGAMPALLI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_10",
-                "name": "BASWARAJ BHEEMRAO",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_11",
-                "name": "BASWARAJ CHITAPUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_12",
-                "name": "BASWARAJ DEVAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_13",
-                "name": "BASWARAJ DHOL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_14",
-                "name": "BASWARAJ KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_15",
-                "name": "RAJSHEKHER MANKAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_16",
-                "name": "BASWARAJ SHARNAIYA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_17",
-                "name": "BHEEMRAO KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_18",
-                "name": "BHEEMU (HUCH)",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_19",
-                "name": "BHEEMU CHITAPUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_20",
-                "name": "BHEEMU DEBBI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_21",
-                "name": "CHANA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_22",
-                "name": "CHANDAMMA BYADER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_23",
-                "name": "CHANNU POLICE PATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_24",
-                "name": "CMPATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_25",
-                "name": "DADA SAHEB MARTUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_26",
-                "name": "DANDAPPA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_27",
-                "name": "DEVAPPA & MALLAPPA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_28",
-                "name": "DEVAPPA K",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_29",
-                "name": "DIESEL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_30",
-                "name": "DUKAN KHARCH",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_31",
-                "name": "ERANNA PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_32",
-                "name": "GTCO",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_33",
-                "name": "GUNDAPPA GIRMAL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_34",
-                "name": "GURU SWAMY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_35",
-                "name": "HAMALI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_36",
-                "name": "HANMANTH CHITAPUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_37",
-                "name": "HANMANTH HUGAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_38",
-                "name": "HANMANTH PANCHAL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_39",
-                "name": "HANMANTH RAO",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_40",
-                "name": "HASHANNA PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_41",
-                "name": "HVT",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_42",
-                "name": "INTEREST",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_43",
-                "name": "GPAY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_44",
-                "name": "JAGADEVI POLICE PATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_45",
-                "name": "JAGAPPA CHITAPUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_46",
-                "name": "JAGAPPA MARENNA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_47",
-                "name": "JAGAPPA NAIKODI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_48",
-                "name": "JAGU HAMAL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_49",
-                "name": "JAGU SHETTY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_50",
-                "name": "JAGU TENT HOUSE",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_51",
-                "name": "JAGUSWAMY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_52",
-                "name": "JAMA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_53",
-                "name": "JHANGIR SAAB",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_54",
-                "name": "ONLINE",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_55",
-                "name": "KALAPPA MADIVAL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_56",
-                "name": "KARIYAPPA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_57",
-                "name": "KASHAPPA BYADER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_58",
-                "name": "KASHAPPA KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_59",
-                "name": "KHAND & DANA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_60",
-                "name": "KHARIDI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_61",
-                "name": "KHYALAPPA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_62",
-                "name": "LIGHT BILL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_63",
-                "name": "MAHADEVAPPA MASTER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_64",
-                "name": "MALLAPPA BUKANOR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_65",
-                "name": "MALLAPPA BYADER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_66",
-                "name": "MALLAPPA DEBBI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_67",
-                "name": "MARTHAND PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_68",
-                "name": "MAYBOOB SAAB ITGAMPALLI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_69",
-                "name": "MEHBOOB LINGAMPALLI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_70",
-                "name": "MEHBOOBSAAB",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_71",
-                "name": "MONAPPA KAMBAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_72",
-                "name": "MOUNESHWAR FERTILIZER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_73",
-                "name": "MUNIM",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_74",
-                "name": "NAGADI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_75",
-                "name": "NAGAMGOUDTI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_76",
-                "name": "NAGAPPA SALALLI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_77",
-                "name": "NAGU GIRMAL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_78",
-                "name": "OTHERS",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_79",
-                "name": "P&CO",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_80",
-                "name": "PEERAPPA KATTIMANI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_81",
-                "name": "PEERAPPA KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_82",
-                "name": "RACHAI MATPATI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_83",
-                "name": "RAJU MADIVAL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_84",
-                "name": "RAMALU HADPAD",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_85",
-                "name": "RAMESH MARUTI KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_86",
-                "name": "RKT",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_87",
-                "name": "RUDRAPPA KATTIMANI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_88",
-                "name": "SANGAPPA KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_89",
-                "name": "SANGAPPA MALAGI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_90",
-                "name": "SHAMRAO BAVA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_91",
-                "name": "SHANKAPPA MALAGI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_92",
-                "name": "SHANKREPPA JAMADAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_93",
-                "name": "SHANKREPPA PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_94",
-                "name": "SHANTAIYYA SWAMI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_95",
-                "name": "SHANTAMMA DEBBI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_96",
-                "name": "SHARNU POLICE PATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_97",
-                "name": "SHARNU POST",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_98",
-                "name": "SHEKAPPA JAMADAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_99",
-                "name": "SHIV MALAGI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_100",
-                "name": "SHIVANAND KESERADGI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_101",
-                "name": "SHIVKUMAR PATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_102",
-                "name": "SHIVLING KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_103",
-                "name": "SHIVRAJ PANCHAYAT",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_104",
-                "name": "SIDDAPPA BELKOTI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_105",
-                "name": "SIDDU GOWDA MARTUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_106",
-                "name": "SIDDU MALKHED",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_107",
-                "name": "SMPATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_108",
-                "name": "SRT",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_109",
-                "name": "SURYAKANTH",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_110",
-                "name": "SUTLI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_111",
-                "name": "TIPPANNA  M",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_112",
-                "name": "TIPPANNA DRIVER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_113",
-                "name": "TRANSPORT",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_114",
-                "name": "TUR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_115",
-                "name": "UDAY KUMAR",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_116",
-                "name": "V.B.PATIL",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_117",
-                "name": "VEERESH SHETTY",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_118",
-                "name": "VINOD POST",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_119",
-                "name": "VISHWANATH TIPPANNA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_120",
-                "name": "WARE HOUSE",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_121",
-                "name": "AIYYAPPA PUJARI BENAKNALLI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_122",
-                "name": "CHANDAPPA DRIVER",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_123",
-                "name": "PEERAPPA DEBBI KONK",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_124",
-                "name": "BASWARAJ GIRMAL (GUNT)",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_125",
-                "name": "INSURANCE",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_126",
-                "name": "DEEPAK RAMDASI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_127",
-                "name": "YALLAPPA PUJARI",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_128",
-                "name": "JAGADEVI POST",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_129",
-                "name": "MAHESH KURKUNTA",
-                "roleTag": null,
-                "phone": null
-        },
-        {
-                "id": "p_130",
-                "name": "MANJUNATH MADIVAL",
-                "roleTag": null,
-                "phone": null
-        }
-]
-    },
+      "particulars": [
+            {
+                  "id": "part_1",
+                  "name": "AGRICULTURE",
+                  "status": "active",
+                  "order": 1
+            },
+            {
+                  "id": "part_2",
+                  "name": "GOAT FARM",
+                  "status": "active",
+                  "order": 2
+            },
+            {
+                  "id": "part_3",
+                  "name": "GTCO",
+                  "status": "active",
+                  "order": 3
+            },
+            {
+                  "id": "part_4",
+                  "name": "JATRA",
+                  "status": "active",
+                  "order": 4
+            },
+            {
+                  "id": "part_5",
+                  "name": "LOAN & TAX",
+                  "status": "active",
+                  "order": 5
+            },
+            {
+                  "id": "part_6",
+                  "name": "P&CO",
+                  "status": "active",
+                  "order": 6
+            },
+            {
+                  "id": "part_7",
+                  "name": "PERSONAL",
+                  "status": "active",
+                  "order": 7
+            },
+            {
+                  "id": "part_8",
+                  "name": "SIDDU MALKHED",
+                  "status": "active",
+                  "order": 8
+            }
+      ],
+      "categories": [
+            {
+                  "id": "cat_1",
+                  "name": "ADVANCE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_2",
+                  "name": "AGRICULTURE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_3",
+                  "name": "AKANKSHA",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_4",
+                  "name": "BARDAN",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_5",
+                  "name": "DANA & TEMPLE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_6",
+                  "name": "DIESEL",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_7",
+                  "name": "DOCTOR",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_8",
+                  "name": "DUKAN KHARCH",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_9",
+                  "name": "EDUCATION",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_10",
+                  "name": "FEED",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_11",
+                  "name": "FERTILIZER",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_12",
+                  "name": "FOOD & ENT",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_13",
+                  "name": "FUEL",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_14",
+                  "name": "GIFT",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_15",
+                  "name": "GLB HOME",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_16",
+                  "name": "GUTGI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_17",
+                  "name": "HAMALI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_18",
+                  "name": "INTEREST",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_19",
+                  "name": "JAMA",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_20",
+                  "name": "KHAND & DANA",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_21",
+                  "name": "KULI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_22",
+                  "name": "LOAN",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_23",
+                  "name": "MACHINE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_24",
+                  "name": "MAINTAINANCE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_25",
+                  "name": "MEDICINE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_26",
+                  "name": "NEEL HOME",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_27",
+                  "name": "PATTI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_28",
+                  "name": "INSHURANCE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_29",
+                  "name": "PHONE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_30",
+                  "name": "PRODUCT PURCHACE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_31",
+                  "name": "PURCHASE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_32",
+                  "name": "RASHI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_33",
+                  "name": "RENT",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_34",
+                  "name": "SALARY",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_35",
+                  "name": "SMP",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_36",
+                  "name": "TAX",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_37",
+                  "name": "TRANSPORT",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_38",
+                  "name": "TRAVEL",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_39",
+                  "name": "VACATION",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_40",
+                  "name": "WORKERS",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_41",
+                  "name": "KADTI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_42",
+                  "name": "RETURN",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_43",
+                  "name": "BC",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_44",
+                  "name": "INVESTMENT",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_45",
+                  "name": "MOOG PATTI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_46",
+                  "name": "UDD PATTI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_47",
+                  "name": "TUR PATTI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_48",
+                  "name": "KADLI PATTI",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_49",
+                  "name": "DAP",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_50",
+                  "name": "VEHICLE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_51",
+                  "name": "PROPERTY",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_52",
+                  "name": "JATRA",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_53",
+                  "name": "OTHERS",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_54",
+                  "name": "ONLINE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_55",
+                  "name": "CUTTING MACHINE",
+                  "linkedParticularId": null
+            },
+            {
+                  "id": "cat_56",
+                  "name": "SHOPPING",
+                  "linkedParticularId": null
+            }
+      ],
+      "people": [
+            {
+                  "id": "p_1",
+                  "name": "AIYAPPA PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_2",
+                  "name": "AKSHAY SHETTY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_3",
+                  "name": "ANIL PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_4",
+                  "name": "APPUSHETTY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_5",
+                  "name": "ARJAPPA KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_6",
+                  "name": "AZAM AUTOMOBILE",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_7",
+                  "name": "BAI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_8",
+                  "name": "BARDAN",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_9",
+                  "name": "BASSAPPA LINGAMPALLI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_10",
+                  "name": "BASWARAJ BHEEMRAO",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_11",
+                  "name": "BASWARAJ CHITAPUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_12",
+                  "name": "BASWARAJ DEVAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_13",
+                  "name": "BASWARAJ DHOL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_14",
+                  "name": "BASWARAJ KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_15",
+                  "name": "RAJSHEKHER MANKAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_16",
+                  "name": "BASWARAJ SHARNAIYA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_17",
+                  "name": "BHEEMRAO KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_18",
+                  "name": "BHEEMU (HUCH)",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_19",
+                  "name": "BHEEMU CHITAPUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_20",
+                  "name": "BHEEMU DEBBI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_21",
+                  "name": "CHANA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_22",
+                  "name": "CHANDAMMA BYADER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_23",
+                  "name": "CHANNU POLICE PATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_24",
+                  "name": "CMPATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_25",
+                  "name": "DADA SAHEB MARTUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_26",
+                  "name": "DANDAPPA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_27",
+                  "name": "DEVAPPA & MALLAPPA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_28",
+                  "name": "DEVAPPA K",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_29",
+                  "name": "DIESEL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_30",
+                  "name": "DUKAN KHARCH",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_31",
+                  "name": "ERANNA PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_32",
+                  "name": "GTCO",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_33",
+                  "name": "GUNDAPPA GIRMAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_34",
+                  "name": "GURU SWAMY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_35",
+                  "name": "HAMALI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_36",
+                  "name": "HANMANTH CHITAPUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_37",
+                  "name": "HANMANTH HUGAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_38",
+                  "name": "HANMANTH PANCHAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_39",
+                  "name": "HANMANTH RAO",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_40",
+                  "name": "HASHANNA PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_41",
+                  "name": "HVT",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_42",
+                  "name": "INTEREST",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_43",
+                  "name": "GPAY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_44",
+                  "name": "JAGADEVI POLICE PATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_45",
+                  "name": "JAGAPPA CHITAPUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_46",
+                  "name": "JAGAPPA MARENNA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_47",
+                  "name": "JAGAPPA NAIKODI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_48",
+                  "name": "JAGU HAMAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_49",
+                  "name": "JAGU SHETTY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_50",
+                  "name": "JAGU TENT HOUSE",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_51",
+                  "name": "JAGUSWAMY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_52",
+                  "name": "JAMA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_53",
+                  "name": "JHANGIR SAAB",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_54",
+                  "name": "ONLINE",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_55",
+                  "name": "KALAPPA MADIVAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_56",
+                  "name": "KARIYAPPA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_57",
+                  "name": "KASHAPPA BYADER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_58",
+                  "name": "KASHAPPA KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_59",
+                  "name": "KHAND & DANA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_60",
+                  "name": "KHARIDI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_61",
+                  "name": "KHYALAPPA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_62",
+                  "name": "LIGHT BILL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_63",
+                  "name": "MAHADEVAPPA MASTER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_64",
+                  "name": "MALLAPPA BUKANOR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_65",
+                  "name": "MALLAPPA BYADER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_66",
+                  "name": "MALLAPPA DEBBI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_67",
+                  "name": "MARTHAND PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_68",
+                  "name": "MAYBOOB SAAB ITGAMPALLI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_69",
+                  "name": "MEHBOOB LINGAMPALLI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_70",
+                  "name": "MEHBOOBSAAB",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_71",
+                  "name": "MONAPPA KAMBAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_72",
+                  "name": "MOUNESHWAR FERTILIZER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_73",
+                  "name": "MUNIM",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_74",
+                  "name": "NAGADI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_75",
+                  "name": "NAGAMGOUDTI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_76",
+                  "name": "NAGAPPA SALALLI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_77",
+                  "name": "NAGU GIRMAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_78",
+                  "name": "OTHERS",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_79",
+                  "name": "P&CO",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_80",
+                  "name": "PEERAPPA KATTIMANI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_81",
+                  "name": "PEERAPPA KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_82",
+                  "name": "RACHAI MATPATI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_83",
+                  "name": "RAJU MADIVAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_84",
+                  "name": "RAMALU HADPAD",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_85",
+                  "name": "RAMESH MARUTI KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_86",
+                  "name": "RKT",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_87",
+                  "name": "RUDRAPPA KATTIMANI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_88",
+                  "name": "SANGAPPA KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_89",
+                  "name": "SANGAPPA MALAGI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_90",
+                  "name": "SHAMRAO BAVA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_91",
+                  "name": "SHANKAPPA MALAGI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_92",
+                  "name": "SHANKREPPA JAMADAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_93",
+                  "name": "SHANKREPPA PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_94",
+                  "name": "SHANTAIYYA SWAMI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_95",
+                  "name": "SHANTAMMA DEBBI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_96",
+                  "name": "SHARNU POLICE PATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_97",
+                  "name": "SHARNU POST",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_98",
+                  "name": "SHEKAPPA JAMADAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_99",
+                  "name": "SHIV MALAGI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_100",
+                  "name": "SHIVANAND KESERADGI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_101",
+                  "name": "SHIVKUMAR PATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_102",
+                  "name": "SHIVLING KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_103",
+                  "name": "SHIVRAJ PANCHAYAT",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_104",
+                  "name": "SIDDAPPA BELKOTI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_105",
+                  "name": "SIDDU GOWDA MARTUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_106",
+                  "name": "SIDDU MALKHED",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_107",
+                  "name": "SMPATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_108",
+                  "name": "SRT",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_109",
+                  "name": "SURYAKANTH",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_110",
+                  "name": "SUTLI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_111",
+                  "name": "TIPPANNA  M",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_112",
+                  "name": "TIPPANNA DRIVER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_113",
+                  "name": "TRANSPORT",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_114",
+                  "name": "TUR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_115",
+                  "name": "UDAY KUMAR",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_116",
+                  "name": "V.B.PATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_117",
+                  "name": "VEERESH SHETTY",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_118",
+                  "name": "VINOD POST",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_119",
+                  "name": "VISHWANATH TIPPANNA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_120",
+                  "name": "WARE HOUSE",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_121",
+                  "name": "AIYYAPPA PUJARI BENAKNALLI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_122",
+                  "name": "CHANDAPPA DRIVER",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_123",
+                  "name": "PEERAPPA DEBBI KONK",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_124",
+                  "name": "BASWARAJ GIRMAL (GUNT)",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_125",
+                  "name": "INSURANCE",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_126",
+                  "name": "DEEPAK RAMDASI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_127",
+                  "name": "YALLAPPA PUJARI",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_128",
+                  "name": "JAGADEVI POST",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_129",
+                  "name": "MAHESH KURKUNTA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_130",
+                  "name": "MANJUNATH MADIVAL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_131",
+                  "name": "BMPATIL",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_132",
+                  "name": "AKANKSHA",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_133",
+                  "name": "AYUSHMAN",
+                  "roleTag": null,
+                  "phone": null
+            },
+            {
+                  "id": "p_134",
+                  "name": "STUTI",
+                  "roleTag": null,
+                  "phone": null
+            }
+      ]
+},
     transactions: [
+      {
+            "id": "tx_hist_841",
+            "date": "2026-10-29",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 4300,
+            "paymentMode": "Cash",
+            "notes": "CHAKI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_842",
+            "date": "2026-10-29",
+            "particularId": "part_1",
+            "categoryId": "cat_34",
+            "personName": "JAGAPPA MARENNA",
+            "amount": 9000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_843",
+            "date": "2026-10-29",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 1110,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_844",
+            "date": "2026-10-29",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "REPAIR TOTA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_845",
+            "date": "2026-10-29",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "DIESEL",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_846",
+            "date": "2026-10-29",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "KARIYAPPA",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_847",
+            "date": "2026-10-29",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 420,
+            "paymentMode": "Cash",
+            "notes": "CHAKI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_848",
+            "date": "2026-10-29",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "MEHBOOBSAAB",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_849",
+            "date": "2026-10-29",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "SHASHIDHAR JAMADAR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_850",
+            "date": "2026-10-29",
+            "particularId": "part_7",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_835",
+            "date": "2026-10-28",
+            "particularId": "part_7",
+            "categoryId": "cat_29",
+            "personName": "AYUSHMAN",
+            "amount": 150,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_836",
+            "date": "2026-10-28",
+            "particularId": "part_7",
+            "categoryId": "cat_56",
+            "personName": "AYUSHMAN",
+            "amount": 1898,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_837",
+            "date": "2026-10-28",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "AYUSHMAN",
+            "amount": 700,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_838",
+            "date": "2026-10-28",
+            "particularId": "part_7",
+            "categoryId": "cat_14",
+            "personName": "STUTI",
+            "amount": 359,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_839",
+            "date": "2026-10-28",
+            "particularId": "part_7",
+            "categoryId": "cat_9",
+            "personName": "AYUSHMAN",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_840",
+            "date": "2026-10-28",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 800,
+            "paymentMode": "Cash",
+            "notes": "FRUITS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_830",
+            "date": "2026-10-27",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 150,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_831",
+            "date": "2026-10-27",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 46940,
+            "paymentMode": "Cash",
+            "notes": "MALLAMMA SEDAM",
+            "media": null
+      },
+      {
+            "id": "tx_hist_832",
+            "date": "2026-10-27",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "UDAY KUMAR",
+            "amount": 25268,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_833",
+            "date": "2026-10-27",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 1968,
+            "paymentMode": "Cash",
+            "notes": "MALLAMMA SEDAM",
+            "media": null
+      },
+      {
+            "id": "tx_hist_834",
+            "date": "2026-10-27",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 40332,
+            "paymentMode": "Cash",
+            "notes": "MOGLAPPA SEDAM",
+            "media": null
+      },
+      {
+            "id": "tx_hist_828",
+            "date": "2026-10-24",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "BMPATIL",
+            "amount": 8532,
+            "paymentMode": "Cash",
+            "notes": "MEDICINE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_829",
+            "date": "2026-10-24",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 750,
+            "paymentMode": "Cash",
+            "notes": "PUMPTURE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_822",
+            "date": "2026-10-23",
+            "particularId": "part_7",
+            "categoryId": "cat_56",
+            "personName": "AYUSHMAN",
+            "amount": 2195,
+            "paymentMode": "Cash",
+            "notes": "HEAD PHONE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_823",
+            "date": "2026-10-23",
+            "particularId": "part_7",
+            "categoryId": "cat_38",
+            "personName": "N/A",
+            "amount": 3600,
+            "paymentMode": "Cash",
+            "notes": "HYDERABAD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_824",
+            "date": "2026-10-23",
+            "particularId": "part_7",
+            "categoryId": "cat_56",
+            "personName": "SMPATIL",
+            "amount": 12700,
+            "paymentMode": "Cash",
+            "notes": "MIX ,SMP,AYSP.STU",
+            "media": null
+      },
+      {
+            "id": "tx_hist_825",
+            "date": "2026-10-23",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "HYDERABAD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_826",
+            "date": "2026-10-23",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 7500,
+            "paymentMode": "Cash",
+            "notes": "HYDERABAD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_827",
+            "date": "2026-10-23",
+            "particularId": "part_7",
+            "categoryId": "cat_56",
+            "personName": "AYUSHMAN",
+            "amount": 16000,
+            "paymentMode": "Cash",
+            "notes": "CLOTHS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_819",
+            "date": "2026-10-22",
+            "particularId": "part_1",
+            "categoryId": "cat_40",
+            "personName": "N/A",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_820",
+            "date": "2026-10-22",
+            "particularId": "part_1",
+            "categoryId": "cat_34",
+            "personName": "JAGAPPA MARENNA",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_821",
+            "date": "2026-10-22",
+            "particularId": "part_7",
+            "categoryId": "cat_34",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "MADATTI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_816",
+            "date": "2026-10-21",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "DEVRMANI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_817",
+            "date": "2026-10-21",
+            "particularId": "part_7",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 2500,
+            "paymentMode": "Cash",
+            "notes": "DURGA DEVI TEMPLE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_818",
+            "date": "2026-10-21",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 4500,
+            "paymentMode": "Cash",
+            "notes": "DASARA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_815",
+            "date": "2026-10-18",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "DASARA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_806",
+            "date": "2026-10-17",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "MEHBOOBSAAB",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_807",
+            "date": "2026-10-17",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 180,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_808",
+            "date": "2026-10-17",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "TIPPANNA  M",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_809",
+            "date": "2026-10-17",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "KARIYAPPA",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_810",
+            "date": "2026-10-17",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "UDAY KUMAR",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_811",
+            "date": "2026-10-17",
+            "particularId": "part_3",
+            "categoryId": "cat_47",
+            "personName": "SHANTAMMA DEBBI",
+            "amount": 194000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_812",
+            "date": "2026-10-17",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "JHANGIR SAAB",
+            "amount": 1200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_813",
+            "date": "2026-10-17",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 2400,
+            "paymentMode": "Cash",
+            "notes": "DASARA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_814",
+            "date": "2026-10-17",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 900,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_804",
+            "date": "2026-10-16",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_805",
+            "date": "2026-10-16",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "SMPATIL",
+            "amount": 805,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_797",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_48",
+            "personName": "GUNDAPPA GIRMAL",
+            "amount": 126648,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_798",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "RUDRAPPA KATTIMANI",
+            "amount": 18547,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_799",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "YALLAPPA PUJARI",
+            "amount": 2600,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_800",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_27",
+            "personName": "SHIV MALAGI",
+            "amount": 45149,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_801",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 240,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_802",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "MOGLAPPA SEDAM",
+            "media": null
+      },
+      {
+            "id": "tx_hist_803",
+            "date": "2026-10-15",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "UDAY KUMAR",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_796",
+            "date": "2026-10-14",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 4000,
+            "paymentMode": "Cash",
+            "notes": "KIA PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_794",
+            "date": "2026-10-13",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_795",
+            "date": "2026-10-13",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 3500,
+            "paymentMode": "Cash",
+            "notes": "RAICHUR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_791",
+            "date": "2026-10-12",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "SPRAY MACHINE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_792",
+            "date": "2026-10-12",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_793",
+            "date": "2026-10-12",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "STUTI",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_786",
+            "date": "2026-10-11",
+            "particularId": "part_7",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 250,
+            "paymentMode": "Cash",
+            "notes": "MOTOR REPAIR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_787",
+            "date": "2026-10-11",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 400,
+            "paymentMode": "Cash",
+            "notes": "BALE DIND",
+            "media": null
+      },
+      {
+            "id": "tx_hist_788",
+            "date": "2026-10-11",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "BALE DIND",
+            "media": null
+      },
+      {
+            "id": "tx_hist_789",
+            "date": "2026-10-11",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "KIA PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_790",
+            "date": "2026-10-11",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "DASARA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_778",
+            "date": "2026-10-08",
+            "particularId": "part_3",
+            "categoryId": "cat_47",
+            "personName": "BASWARAJ SHARNAIYA",
+            "amount": 52215,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_779",
+            "date": "2026-10-08",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "BASWARAJ SHARNAIYA",
+            "amount": 305155,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_780",
+            "date": "2026-10-08",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "JAGU SHETTY",
+            "amount": 76137,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_781",
+            "date": "2026-10-08",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_782",
+            "date": "2026-10-08",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "NAGADI",
+            "amount": 6075,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_783",
+            "date": "2026-10-08",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 610,
+            "paymentMode": "Cash",
+            "notes": "KUSUBI OIL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_784",
+            "date": "2026-10-08",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "SMALL TRACTOR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_785",
+            "date": "2026-10-08",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 700,
+            "paymentMode": "Cash",
+            "notes": "ELECTRICAL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_774",
+            "date": "2026-10-07",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 50,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_775",
+            "date": "2026-10-07",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHARNU POST",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_776",
+            "date": "2026-10-07",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BASWARAJ BHEEMRAO",
+            "amount": 15000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_777",
+            "date": "2026-10-07",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "HOONALLI MALLAPPA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_770",
+            "date": "2026-10-06",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "NAGU GIRMAL",
+            "amount": 22274,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_771",
+            "date": "2026-10-06",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 15000,
+            "paymentMode": "Cash",
+            "notes": "ANAND KUMBAR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_772",
+            "date": "2026-10-06",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "HOWAR SOWING",
+            "media": null
+      },
+      {
+            "id": "tx_hist_773",
+            "date": "2026-10-06",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "UDAY KUMAR",
+            "amount": 15000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_766",
+            "date": "2026-10-05",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 350,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_767",
+            "date": "2026-10-05",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "BMPATIL",
+            "amount": 8000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_768",
+            "date": "2026-10-05",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_769",
+            "date": "2026-10-05",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "DIESEL",
+            "amount": 1200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_759",
+            "date": "2026-10-04",
+            "particularId": "part_7",
+            "categoryId": "cat_15",
+            "personName": "AKANKSHA",
+            "amount": 22500,
+            "paymentMode": "Online",
+            "notes": "MONTHLY EXPENCE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_760",
+            "date": "2026-10-04",
+            "particularId": "part_7",
+            "categoryId": "cat_35",
+            "personName": "SMPATIL",
+            "amount": 700,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_761",
+            "date": "2026-10-04",
+            "particularId": "part_7",
+            "categoryId": "cat_9",
+            "personName": "N/A",
+            "amount": 1100,
+            "paymentMode": "Cash",
+            "notes": "PURCHASE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_762",
+            "date": "2026-10-04",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 4900,
+            "paymentMode": "Cash",
+            "notes": "DASARA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_763",
+            "date": "2026-10-04",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "RAJU MADIVAL",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_764",
+            "date": "2026-10-04",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "DIESEL",
+            "amount": 1000,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_765",
+            "date": "2026-10-04",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Online",
+            "notes": "KIA PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_758",
+            "date": "2026-10-03",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 600,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_750",
+            "date": "2026-10-02",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_751",
+            "date": "2026-10-02",
+            "particularId": "part_7",
+            "categoryId": "cat_35",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "PERSONAL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_752",
+            "date": "2026-10-02",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 800,
+            "paymentMode": "Cash",
+            "notes": "FOOD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_753",
+            "date": "2026-10-02",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "FOOD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_754",
+            "date": "2026-10-02",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "CODE REPAIR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_755",
+            "date": "2026-10-02",
+            "particularId": "part_1",
+            "categoryId": "cat_6",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Online",
+            "notes": "RAJU TRACTOR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_756",
+            "date": "2026-10-02",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_757",
+            "date": "2026-10-02",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "GANGAPPA MADIVAL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_742",
+            "date": "2026-10-01",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 20000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_743",
+            "date": "2026-10-01",
+            "particularId": "part_5",
+            "categoryId": "cat_36",
+            "personName": "N/A",
+            "amount": 58000,
+            "paymentMode": "Cash",
+            "notes": "INCOME TAX",
+            "media": null
+      },
+      {
+            "id": "tx_hist_744",
+            "date": "2026-10-01",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_745",
+            "date": "2026-10-01",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "DIESEL",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_746",
+            "date": "2026-10-01",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 225,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_747",
+            "date": "2026-10-01",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "DIESEL",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_748",
+            "date": "2026-10-01",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_749",
+            "date": "2026-10-01",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "DIESEL",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_737",
+            "date": "2026-09-30",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "NAGU GIRMAL",
+            "amount": 800,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_738",
+            "date": "2026-09-30",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "NAGU GIRMAL",
+            "amount": 20000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_739",
+            "date": "2026-09-30",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "RAJU MADIVAL",
+            "amount": 4350,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_740",
+            "date": "2026-09-30",
+            "particularId": "part_3",
+            "categoryId": "cat_49",
+            "personName": "NAGADI",
+            "amount": 5800,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_741",
+            "date": "2026-09-30",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BASWARAJ SHARNAIYA",
+            "amount": 60000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_732",
+            "date": "2026-09-29",
+            "particularId": "part_1",
+            "categoryId": "cat_31",
+            "personName": "N/A",
+            "amount": 270,
+            "paymentMode": "Cash",
+            "notes": "QUARTER PIN",
+            "media": null
+      },
+      {
+            "id": "tx_hist_733",
+            "date": "2026-09-29",
+            "particularId": "part_1",
+            "categoryId": "cat_11",
+            "personName": "N/A",
+            "amount": 8000,
+            "paymentMode": "Cash",
+            "notes": "GOUCHO",
+            "media": null
+      },
+      {
+            "id": "tx_hist_734",
+            "date": "2026-09-29",
+            "particularId": "part_3",
+            "categoryId": "cat_11",
+            "personName": "MOUNESHWAR FERTILIZER",
+            "amount": 22570,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_735",
+            "date": "2026-09-29",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "REPAIR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_736",
+            "date": "2026-09-29",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "KIA PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_727",
+            "date": "2026-09-28",
+            "particularId": "part_6",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_728",
+            "date": "2026-09-28",
+            "particularId": "part_6",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_729",
+            "date": "2026-09-28",
+            "particularId": "part_7",
+            "categoryId": "cat_35",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "PERSOAL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_730",
+            "date": "2026-09-28",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 300,
+            "paymentMode": "Cash",
+            "notes": "TVS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_731",
+            "date": "2026-09-28",
+            "particularId": "part_1",
+            "categoryId": "cat_6",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "SOWING CHANA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_723",
+            "date": "2026-09-26",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "AYUSHMAN",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_724",
+            "date": "2026-09-26",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "FRUITS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_725",
+            "date": "2026-09-26",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "MADATTI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_726",
+            "date": "2026-09-26",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "NAGAMGOUDTI",
+            "amount": 90417,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_710",
+            "date": "2026-09-25",
+            "particularId": "part_1",
+            "categoryId": "cat_34",
+            "personName": "MALLAPPA BYADER",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_711",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 170,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_712",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "NAGAPPA SALALLI",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_713",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 2500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_714",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "TUR",
+            "amount": 3715,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_715",
+            "date": "2026-09-25",
+            "particularId": "part_1",
+            "categoryId": "cat_23",
+            "personName": "N/A",
+            "amount": 7500,
+            "paymentMode": "Cash",
+            "notes": "RASHI MACHINE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_716",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "DEVAPPA K",
+            "amount": 37959,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_717",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "SHANKAPPA MALAGI",
+            "amount": 72627,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_718",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "VINOD POST",
+            "amount": 31959,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_719",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "SHARNU POST",
+            "amount": 41780,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_720",
+            "date": "2026-09-25",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "SHARNU POST",
+            "amount": 173978,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_721",
+            "date": "2026-09-25",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "SMPATIL",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_722",
+            "date": "2026-09-25",
+            "particularId": "part_7",
+            "categoryId": "cat_43",
+            "personName": "SMPATIL",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_708",
+            "date": "2026-09-24",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGADEVI POST",
+            "amount": 700,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_709",
+            "date": "2026-09-24",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 340,
+            "paymentMode": "Cash",
+            "notes": "PESTISIDE FOR SHOP",
+            "media": null
+      },
+      {
+            "id": "tx_hist_703",
+            "date": "2026-09-23",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 250,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_704",
+            "date": "2026-09-23",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "KIA PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_705",
+            "date": "2026-09-23",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "AYUSHMAN",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_706",
+            "date": "2026-09-23",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BASWARAJ SHARNAIYA",
+            "amount": 20000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_707",
+            "date": "2026-09-23",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "GUNDAPPA GIRMAL",
+            "amount": 282536,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_698",
+            "date": "2026-09-21",
+            "particularId": "part_7",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 16000,
+            "paymentMode": "Cash",
+            "notes": "GAZIPUR HOUSW",
+            "media": null
+      },
+      {
+            "id": "tx_hist_699",
+            "date": "2026-09-21",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_700",
+            "date": "2026-09-21",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JHANGIR SAAB",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_701",
+            "date": "2026-09-21",
+            "particularId": "part_6",
+            "categoryId": "cat_19",
+            "personName": "HANMANTH RAO",
+            "amount": 35000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_702",
+            "date": "2026-09-21",
+            "particularId": "part_7",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 9000,
+            "paymentMode": "Cash",
+            "notes": "GAZIPUR HOUSW",
+            "media": null
+      },
+      {
+            "id": "tx_hist_689",
+            "date": "2026-09-20",
+            "particularId": "part_1",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 750,
+            "paymentMode": "Cash",
+            "notes": "TRACTOR PUMTURE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_690",
+            "date": "2026-09-20",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_691",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "KIA PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_692",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "AKANKSHA",
+            "amount": 700,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_693",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 350,
+            "paymentMode": "Cash",
+            "notes": "BREAKFAST",
+            "media": null
+      },
+      {
+            "id": "tx_hist_694",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "SMPATIL",
+            "amount": 7000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_695",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_25",
+            "personName": "BMPATIL",
+            "amount": 1300,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_696",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_697",
+            "date": "2026-09-20",
+            "particularId": "part_7",
+            "categoryId": "cat_38",
+            "personName": "N/A",
+            "amount": 25000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_687",
+            "date": "2026-09-19",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 960,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_688",
+            "date": "2026-09-19",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 29295,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_683",
+            "date": "2026-09-17",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "SHAMRAO BAVA",
+            "amount": 16170,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_684",
+            "date": "2026-09-17",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 600,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_685",
+            "date": "2026-09-17",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 30729,
+            "paymentMode": "Cash",
+            "notes": "JAGU POLICE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_686",
+            "date": "2026-09-17",
+            "particularId": "part_3",
+            "categoryId": "cat_42",
+            "personName": "GUNDAPPA GIRMAL",
+            "amount": 60000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_675",
+            "date": "2026-09-15",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "KALAPPA MADIVAL",
+            "amount": 32785,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_676",
+            "date": "2026-09-15",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 38859,
+            "paymentMode": "Cash",
+            "notes": "JAGU HEDALLI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_677",
+            "date": "2026-09-15",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_678",
+            "date": "2026-09-15",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "TT",
+            "media": null
+      },
+      {
+            "id": "tx_hist_679",
+            "date": "2026-09-15",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "HOONALLI MALLAPPA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_680",
+            "date": "2026-09-15",
+            "particularId": "part_7",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "TEMPLE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_681",
+            "date": "2026-09-15",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "MARTHAND PUJARI",
+            "amount": 150000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_682",
+            "date": "2026-09-15",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "MAHADEVAPPA MASTER",
+            "amount": 187540,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_673",
+            "date": "2026-09-14",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_674",
+            "date": "2026-09-14",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "NAGADI",
+            "amount": 3200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_670",
+            "date": "2026-09-13",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "RUDRAPPA KATTIMANI",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_671",
+            "date": "2026-09-13",
+            "particularId": "part_7",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "TEMPLE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_672",
+            "date": "2026-09-13",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "CHANNU POLICE PATIL",
+            "amount": 57271,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_664",
+            "date": "2026-09-12",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_665",
+            "date": "2026-09-12",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "SRT",
+            "amount": 300,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_666",
+            "date": "2026-09-12",
+            "particularId": "part_3",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 400,
+            "paymentMode": "Cash",
+            "notes": "PESTISIDE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_667",
+            "date": "2026-09-12",
+            "particularId": "part_3",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "POOJA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_668",
+            "date": "2026-09-12",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 462,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_669",
+            "date": "2026-09-12",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHEKAPPA JAMADAR",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_653",
+            "date": "2026-09-11",
+            "particularId": "part_7",
+            "categoryId": "cat_26",
+            "personName": "BMPATIL",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_654",
+            "date": "2026-09-11",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 7500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_655",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "TEA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_656",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "SRT",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_657",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 576,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_658",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_659",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "MAHESH KURKUNTA",
+            "amount": 123878,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_660",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 15305,
+            "paymentMode": "Cash",
+            "notes": "KALAPPA WIELDING",
+            "media": null
+      },
+      {
+            "id": "tx_hist_661",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 22808,
+            "paymentMode": "Cash",
+            "notes": "NAGU NAIKODI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_662",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "BHEEMU DEBBI",
+            "amount": 6799,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_663",
+            "date": "2026-09-11",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "BHEEMU DEBBI",
+            "amount": 7050,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_650",
+            "date": "2026-09-10",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_651",
+            "date": "2026-09-10",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 3500,
+            "paymentMode": "Cash",
+            "notes": "TT",
+            "media": null
+      },
+      {
+            "id": "tx_hist_652",
+            "date": "2026-09-10",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "HOONALLI MALLAPPA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_636",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 1900,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_637",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_37",
+            "personName": "N/A",
+            "amount": 6200,
+            "paymentMode": "Cash",
+            "notes": "GLB TO SEDM",
+            "media": null
+      },
+      {
+            "id": "tx_hist_638",
+            "date": "2026-09-09",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_639",
+            "date": "2026-09-09",
+            "particularId": "part_7",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 2100,
+            "paymentMode": "Cash",
+            "notes": "KHAND",
+            "media": null
+      },
+      {
+            "id": "tx_hist_640",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "ANIL PUJARI",
+            "amount": 24402,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_641",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "ANIL PUJARI",
+            "amount": 3300,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_642",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "ANIL PUJARI",
+            "amount": 215760,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_643",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "SHARNU POST",
+            "amount": 19244,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_644",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "RAJSHEKHER MANKAR",
+            "amount": 128049,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_645",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 30000,
+            "paymentMode": "Cash",
+            "notes": "NAGU HOONALLI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_646",
+            "date": "2026-09-09",
+            "particularId": "part_1",
+            "categoryId": "cat_23",
+            "personName": "N/A",
+            "amount": 25000,
+            "paymentMode": "Cash",
+            "notes": "CHANNI MACHINE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_647",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_47",
+            "personName": "SHIV MALAGI",
+            "amount": 300000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_648",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_18",
+            "personName": "NAGAMGOUDTI",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_649",
+            "date": "2026-09-09",
+            "particularId": "part_3",
+            "categoryId": "cat_33",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_635",
+            "date": "2026-09-08",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 1042,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_634",
+            "date": "2026-09-06",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 300,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_632",
+            "date": "2026-09-05",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 360,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_633",
+            "date": "2026-09-05",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "ANIL PUJARI",
+            "amount": 50000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_628",
+            "date": "2026-09-04",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "KASHAPPA BYADER",
+            "amount": 5864,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_629",
+            "date": "2026-09-04",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 4017,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_630",
+            "date": "2026-09-04",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 4000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_631",
+            "date": "2026-09-04",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "SIKANDER",
+            "media": null
+      },
+      {
+            "id": "tx_hist_619",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_620",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 6000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_621",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "TIPPANNA  M",
+            "amount": 3591,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_622",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "DANDAPPA",
+            "amount": 49064,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_623",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 70000,
+            "paymentMode": "Online",
+            "notes": "JAGU POLICE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_624",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "NAGADI",
+            "amount": 1990,
+            "paymentMode": "Online",
+            "notes": "SIDDU BYADER",
+            "media": null
+      },
+      {
+            "id": "tx_hist_625",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "KASHAPPA BYADER",
+            "amount": 16829,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_626",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BASWARAJ SHARNAIYA",
+            "amount": 100000,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_627",
+            "date": "2026-09-03",
+            "particularId": "part_3",
+            "categoryId": "cat_42",
+            "personName": "GUNDAPPA GIRMAL",
+            "amount": 100000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_613",
+            "date": "2026-09-02",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHANKAPPA MALAGI",
+            "amount": 1000,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_614",
+            "date": "2026-09-02",
+            "particularId": "part_3",
+            "categoryId": "cat_11",
+            "personName": "MOUNESHWAR FERTILIZER",
+            "amount": 50000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_615",
+            "date": "2026-09-02",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "N/A",
+            "amount": 1800,
+            "paymentMode": "Cash",
+            "notes": "KHADER",
+            "media": null
+      },
+      {
+            "id": "tx_hist_616",
+            "date": "2026-09-02",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BHEEMU DEBBI",
+            "amount": 500,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_617",
+            "date": "2026-09-02",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "CHANDAMMA BYADER",
+            "amount": 47000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_618",
+            "date": "2026-09-02",
+            "particularId": "part_3",
+            "categoryId": "cat_33",
+            "personName": "JHANGIR SAAB",
+            "amount": 250,
+            "paymentMode": "Online",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_600",
+            "date": "2026-09-01",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "N/A",
+            "amount": 13931,
+            "paymentMode": "Cash",
+            "notes": "RAMU PUJARI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_601",
+            "date": "2026-09-01",
+            "particularId": "part_3",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 1520,
+            "paymentMode": "Cash",
+            "notes": "SHARANABASAWESHER",
+            "media": null
+      },
+      {
+            "id": "tx_hist_602",
+            "date": "2026-09-01",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "N/A",
+            "amount": 17150,
+            "paymentMode": "Cash",
+            "notes": "SIDDU BYADER",
+            "media": null
+      },
+      {
+            "id": "tx_hist_603",
+            "date": "2026-09-01",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "MEHBOOBSAAB",
+            "amount": 53242,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_604",
+            "date": "2026-09-01",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "N/A",
+            "amount": 6564,
+            "paymentMode": "Cash",
+            "notes": "CHANNU PUJARI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_605",
+            "date": "2026-09-01",
+            "particularId": "part_3",
+            "categoryId": "cat_33",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "RENT",
+            "media": null
+      },
+      {
+            "id": "tx_hist_606",
+            "date": "2026-09-01",
+            "particularId": "part_1",
+            "categoryId": "cat_16",
+            "personName": "N/A",
+            "amount": 63000,
+            "paymentMode": "Cash",
+            "notes": "UDD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_607",
+            "date": "2026-09-01",
+            "particularId": "part_1",
+            "categoryId": "cat_16",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "UDD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_608",
+            "date": "2026-09-01",
+            "particularId": "part_7",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "KIA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_609",
+            "date": "2026-09-01",
+            "particularId": "part_7",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "BAKERY",
+            "media": null
+      },
+      {
+            "id": "tx_hist_610",
+            "date": "2026-09-01",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "HOONALLI MALLPPA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_611",
+            "date": "2026-09-01",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_612",
+            "date": "2026-09-01",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "FOOD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_594",
+            "date": "2026-08-31",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_595",
+            "date": "2026-08-31",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "MEHBOOBSAAB",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_596",
+            "date": "2026-08-31",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHANKAPPA MALAGI",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_597",
+            "date": "2026-08-31",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "MAHESH KURKUNTA",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_598",
+            "date": "2026-08-31",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "NAGU GIRMAL",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_599",
+            "date": "2026-08-31",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 6000,
+            "paymentMode": "Cash",
+            "notes": "UDD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_566",
+            "date": "2026-08-28",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_567",
+            "date": "2026-08-28",
+            "particularId": "part_7",
+            "categoryId": "cat_14",
+            "personName": "N/A",
+            "amount": 4000,
+            "paymentMode": "Cash",
+            "notes": "RAKHI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_568",
+            "date": "2026-08-28",
+            "particularId": "part_1",
+            "categoryId": "cat_16",
+            "personName": "N/A",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "UDD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_569",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 150,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_570",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "ANIL PUJARI",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_571",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "DEVAPPA K",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_572",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 450,
+            "paymentMode": "Cash",
+            "notes": "SPRAY MACHNE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_573",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 15000,
+            "paymentMode": "Cash",
+            "notes": "NAGU NAIKODI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_574",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "JAGU POLICE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_575",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BASWARAJ SHARNAIYA",
+            "amount": 20000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_576",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 474,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_577",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "N/A",
+            "amount": 100,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_578",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "N/A",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "RANI BAI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_579",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_5",
+            "personName": "N/A",
+            "amount": 11000,
+            "paymentMode": "Cash",
+            "notes": "GANAPATI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_580",
+            "date": "2026-08-28",
+            "particularId": "part_1",
+            "categoryId": "cat_31",
+            "personName": "N/A",
+            "amount": 160,
+            "paymentMode": "Cash",
+            "notes": "NUT BOLT",
+            "media": null
+      },
+      {
+            "id": "tx_hist_581",
+            "date": "2026-08-28",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "N/A",
+            "amount": 1500,
+            "paymentMode": "Cash",
+            "notes": "LOKAPPA KONK",
+            "media": null
+      },
+      {
+            "id": "tx_hist_582",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "SHANKREPPA JAMADAR",
+            "amount": 24682,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_583",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_55",
+            "personName": "SMPATIL",
+            "amount": 25350,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_584",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_55",
+            "personName": "YALLAPPA PUJARI",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_585",
+            "date": "2026-08-28",
+            "particularId": "part_1",
+            "categoryId": "cat_55",
+            "personName": "YALLAPPA PUJARI",
+            "amount": 4500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_586",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_55",
+            "personName": "N/A",
+            "amount": 10800,
+            "paymentMode": "Cash",
+            "notes": "BEERBAN HOLA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_587",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_55",
+            "personName": "NAGU GIRMAL",
+            "amount": 14850,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_588",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_55",
+            "personName": "RAJU MADIVAL",
+            "amount": 13500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_589",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "UDAY KUMAR",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_590",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "RAJSHEKHER MANKAR",
+            "amount": 20000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_591",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHARNU POST",
+            "amount": 20000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_592",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "NAGAMGOUDTI",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_593",
+            "date": "2026-08-28",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "BASWARAJ DEVAR",
+            "amount": 15665,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_559",
+            "date": "2026-08-27",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHARNU POST",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_560",
+            "date": "2026-08-27",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 200,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_561",
+            "date": "2026-08-27",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_562",
+            "date": "2026-08-27",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_563",
+            "date": "2026-08-27",
+            "particularId": "part_1",
+            "categoryId": "cat_16",
+            "personName": "N/A",
+            "amount": 41000,
+            "paymentMode": "Cash",
+            "notes": "UDD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_564",
+            "date": "2026-08-27",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "N/A",
+            "amount": 2700,
+            "paymentMode": "Cash",
+            "notes": "RATNAMMA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_565",
+            "date": "2026-08-27",
+            "particularId": "part_3",
+            "categoryId": "cat_30",
+            "personName": "N/A",
+            "amount": 10700,
+            "paymentMode": "Cash",
+            "notes": "UMADEVI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_551",
+            "date": "2026-08-25",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 17078,
+            "paymentMode": "Cash",
+            "notes": "SRINIVAS ADKI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_552",
+            "date": "2026-08-25",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHARNU POST",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_553",
+            "date": "2026-08-25",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 16493,
+            "paymentMode": "Cash",
+            "notes": "SUBHASH ADKI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_554",
+            "date": "2026-08-25",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 1100,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_555",
+            "date": "2026-08-25",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "NAGU GIRMAL",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_556",
+            "date": "2026-08-25",
+            "particularId": "part_1",
+            "categoryId": "cat_16",
+            "personName": "N/A",
+            "amount": 16000,
+            "paymentMode": "Cash",
+            "notes": "UDD",
+            "media": null
+      },
+      {
+            "id": "tx_hist_557",
+            "date": "2026-08-25",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_558",
+            "date": "2026-08-25",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 41368,
+            "paymentMode": "Cash",
+            "notes": "VIKAS ADKI",
+            "media": null
+      },
+      {
+            "id": "tx_hist_541",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "SHANKREPPA PUJARI",
+            "amount": 400000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_542",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "N/A",
+            "amount": 17350,
+            "paymentMode": "Cash",
+            "notes": "SABANNA KONK",
+            "media": null
+      },
+      {
+            "id": "tx_hist_543",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "MEHBOOBSAAB",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_544",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHANKREPPA JAMADAR",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_545",
+            "date": "2026-08-24",
+            "particularId": "part_1",
+            "categoryId": "cat_12",
+            "personName": "N/A",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "WORKERS",
+            "media": null
+      },
+      {
+            "id": "tx_hist_546",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_37",
+            "personName": "DIESEL",
+            "amount": 3000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_547",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_24",
+            "personName": "N/A",
+            "amount": 500,
+            "paymentMode": "Cash",
+            "notes": "KATA MACHINE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_548",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHANKREPPA JAMADAR",
+            "amount": 2900,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_549",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 1494,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_550",
+            "date": "2026-08-24",
+            "particularId": "part_3",
+            "categoryId": "cat_46",
+            "personName": "N/A",
+            "amount": 1988,
+            "paymentMode": "Cash",
+            "notes": "RADABAI KUMBAR",
+            "media": null
+      },
+      {
+            "id": "tx_hist_537",
+            "date": "2026-08-23",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHANKREPPA JAMADAR",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_538",
+            "date": "2026-08-23",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGADEVI POLICE PATIL",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_539",
+            "date": "2026-08-23",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHANKREPPA JAMADAR",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_540",
+            "date": "2026-08-23",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 960,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_534",
+            "date": "2026-08-22",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "YALLAPPA PUJARI",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_535",
+            "date": "2026-08-22",
+            "particularId": "part_1",
+            "categoryId": "cat_23",
+            "personName": "N/A",
+            "amount": 7000,
+            "paymentMode": "Cash",
+            "notes": "RASHI MACHINE",
+            "media": null
+      },
+      {
+            "id": "tx_hist_536",
+            "date": "2026-08-22",
+            "particularId": "part_1",
+            "categoryId": "cat_50",
+            "personName": "N/A",
+            "amount": 650,
+            "paymentMode": "Cash",
+            "notes": "HEROHONDA",
+            "media": null
+      },
+      {
+            "id": "tx_hist_530",
+            "date": "2026-08-21",
+            "particularId": "part_1",
+            "categoryId": "cat_21",
+            "personName": "CHANDAPPA DRIVER",
+            "amount": 2000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_531",
+            "date": "2026-08-21",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "JAGU SHETTY",
+            "amount": 5500,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_532",
+            "date": "2026-08-21",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 150,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_533",
+            "date": "2026-08-21",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "SHEKAPPA JAMADAR",
+            "amount": 10000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_526",
+            "date": "2026-08-20",
+            "particularId": "part_3",
+            "categoryId": "cat_45",
+            "personName": "RAMALU HADPAD",
+            "amount": 16198,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_527",
+            "date": "2026-08-20",
+            "particularId": "part_3",
+            "categoryId": "cat_17",
+            "personName": "HAMALI",
+            "amount": 870,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
+            "id": "tx_hist_528",
+            "date": "2026-08-20",
+            "particularId": "part_1",
+            "categoryId": "cat_13",
+            "personName": "N/A",
+            "amount": 250,
+            "paymentMode": "Cash",
+            "notes": "PETROL",
+            "media": null
+      },
+      {
+            "id": "tx_hist_529",
+            "date": "2026-08-20",
+            "particularId": "part_3",
+            "categoryId": "cat_1",
+            "personName": "KARIYAPPA",
+            "amount": 1000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
       {
             "id": "tx_hist_211",
             "date": "2026-08-19",
@@ -1995,6 +5604,17 @@
             "media": null
       },
       {
+            "id": "tx_hist_525",
+            "date": "2026-08-11",
+            "particularId": "part_7",
+            "categoryId": "cat_43",
+            "personName": "SMPATIL",
+            "amount": 5000,
+            "paymentMode": "Cash",
+            "notes": "-",
+            "media": null
+      },
+      {
             "id": "tx_hist_133",
             "date": "2026-08-10",
             "particularId": "part_7",
@@ -2388,6 +6008,17 @@
             "amount": 100,
             "paymentMode": "Cash",
             "notes": "SPRAY",
+            "media": null
+      },
+      {
+            "id": "tx_hist_524",
+            "date": "2026-08-01",
+            "particularId": "part_7",
+            "categoryId": "cat_15",
+            "personName": "N/A",
+            "amount": 9561,
+            "paymentMode": "Cash",
+            "notes": "SHOPPING",
             "media": null
       },
       {
@@ -6903,8 +10534,9 @@
         if (raw) {
           const parsed = JSON.parse(raw);
           if (parsed && parsed.master && Array.isArray(parsed.transactions)) {
-            if (!parsed.schemaVersion || parsed.schemaVersion < 3) {
-              parsed.schemaVersion = 3;
+            if (!parsed.schemaVersion || parsed.schemaVersion < 4) {
+              parsed.schemaVersion = 4;
+              parsed.master = JSON.parse(JSON.stringify(DEFAULT_INITIAL_STATE.master));
               parsed.transactions = JSON.parse(JSON.stringify(DEFAULT_INITIAL_STATE.transactions));
             }
             return parsed;
